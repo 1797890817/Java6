@@ -1,5 +1,7 @@
 package com.ddbin.javaweb.listener;
 
+import java.io.Serializable;
+
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionActivationListener;
 import javax.servlet.http.HttpSessionAttributeListener;
@@ -15,7 +17,8 @@ import javax.servlet.http.HttpSessionListener;
  */
 @WebListener
 public class HttpSessionListenerDemo implements HttpSessionListener, HttpSessionAttributeListener,
-		HttpSessionActivationListener, HttpSessionIdListener, HttpSessionBindingListener {
+		HttpSessionActivationListener, HttpSessionIdListener, HttpSessionBindingListener,Serializable {
+	private static final long serialVersionUID = 6826451609832982191L;
 	private String name = "hsld";
 
 	@Override
@@ -61,7 +64,7 @@ public class HttpSessionListenerDemo implements HttpSessionListener, HttpSession
 	 * @see HttpSessionActivationListener#sessionDidActivate(HttpSessionEvent)
 	 */
 	public void sessionDidActivate(HttpSessionEvent arg0) {
-		System.out.println("sessionDidActivate");
+		 System.out.println(this + "从硬盘读取并活化了...");
 	}
 
 	/**
@@ -92,7 +95,7 @@ public class HttpSessionListenerDemo implements HttpSessionListener, HttpSession
 	 * @see HttpSessionActivationListener#sessionWillPassivate(HttpSessionEvent)
 	 */
 	public void sessionWillPassivate(HttpSessionEvent arg0) {
-		System.out.println("sessionWillPassivate");
+		 System.out.println(this + "保存到硬盘了...");
 	}
 
 	/**

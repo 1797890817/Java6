@@ -14,18 +14,18 @@ import javax.servlet.annotation.WebInitParam;
 /**
  * Servlet Filter implementation class EncodingFilter
  */
-@WebFilter(
-		dispatcherTypes = {
-				DispatcherType.REQUEST, 
-				DispatcherType.FORWARD, 
-				DispatcherType.INCLUDE, 
-				DispatcherType.ERROR
-		}
-					, 
-		urlPatterns = { "/*" }, 
-		initParams = { 
-				@WebInitParam(name = "charset", value = "UTF-8")
-		})
+//@WebFilter(
+//		dispatcherTypes = {
+//				DispatcherType.REQUEST, 
+//				DispatcherType.FORWARD, 
+//				DispatcherType.INCLUDE, 
+//				DispatcherType.ERROR
+//		}
+//					, 
+//		urlPatterns = { "/*" }, 
+//		initParams = { 
+//				@WebInitParam(name = "charset", value = "UTF-8")
+//		})
 public class EncodingFilter implements Filter {
 	private String charset="";
 

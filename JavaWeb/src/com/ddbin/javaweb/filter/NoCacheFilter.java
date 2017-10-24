@@ -15,13 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class NoCacheFilter
  */
-@WebFilter(dispatcherTypes = {
-				DispatcherType.REQUEST, 
-				DispatcherType.FORWARD, 
-				DispatcherType.INCLUDE, 
-				DispatcherType.ERROR
-		}
-		, urlPatterns = { "/*" })
+//@WebFilter(dispatcherTypes = {
+//				DispatcherType.REQUEST, 
+//				DispatcherType.FORWARD, 
+//				DispatcherType.INCLUDE, 
+//				DispatcherType.ERROR
+//		}
+//		, urlPatterns = { "/*" })
 public class NoCacheFilter implements Filter {
 
     /**

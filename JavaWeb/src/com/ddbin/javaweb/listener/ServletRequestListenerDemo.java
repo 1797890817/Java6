@@ -29,8 +29,7 @@ public class ServletRequestListenerDemo
 	 * @see AsyncListener#onComplete(AsyncEvent)
 	 */
 	public void onComplete(AsyncEvent arg0) throws java.io.IOException {
-		HttpServletRequest request = (HttpServletRequest) arg0.getAsyncContext().getRequest();
-		System.out.println("ServletRequestListenerDemo onComplete:"+request.getRequestURL());
+		System.out.println("ServletRequestListenerDemo onComplete");
 	}
 
 	/**
@@ -56,7 +55,7 @@ public class ServletRequestListenerDemo
 	}
 
 	/**
-	 * @see AsyncListener#onStartAsync(AsyncEvent)
+	 * @see AsyncListener#onStartAsync(AsyncEvent)//目前捕捉不到
 	 */
 	public void onStartAsync(AsyncEvent arg0) throws java.io.IOException {
 		HttpServletRequest request = (HttpServletRequest) arg0.getAsyncContext().getRequest();

@@ -26,9 +26,10 @@
 		HttpSessionListenerDemo hsld = new HttpSessionListenerDemo();
 		HttpSessionListenerDemo hsld2 = new HttpSessionListenerDemo("new-hsld");
 		session.setAttribute("hsld", hsld);
-		session.setAttribute("hsld", hsld2);
-		session.removeAttribute("hsld");
-		
+		//session.setAttribute("hsld", hsld2);
+		//session.removeAttribute("hsld");
 	%>
+	<a href="/JavaWeb/InvalidateSessionServlet">使会话失效</a>
+	
 </body>
 </html>

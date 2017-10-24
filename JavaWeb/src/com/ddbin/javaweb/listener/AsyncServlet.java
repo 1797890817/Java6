@@ -30,7 +30,7 @@ public class AsyncServlet extends HttpServlet {
 		actx.addListener(new ServletRequestListenerDemo());
 
 		// 设置异步调用的超时时长
-		actx.setTimeout(60 * 1000);
+		actx.setTimeout(10 * 1000);
 		// 启动异步调用的线程，该线程以异步方式执行
 		actx.start(new GetBooksThread(actx));
 		out.println("结束Servlet的时间：" + new java.util.Date() + ".<br/>");

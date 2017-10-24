@@ -16,7 +16,7 @@ public class GetBooksThread implements Runnable {
 	public void run() {
 		try {
 			// 等待5秒钟，以模拟业务方法的执行
-			Thread.sleep(5 * 1000);
+			Thread.sleep(3 * 1000);	//应为3秒，10则睡觉才超时
 			ServletRequest request = actx.getRequest();
 			List<String> books = new ArrayList<String>();
 			books.add("Java从入门到精通");

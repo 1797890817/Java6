@@ -14,6 +14,9 @@
     <param-name>name</param-name>
     <param-value>lisi</param-value>
   </context-param>
+  <session-config>
+    <session-timeout>1</session-timeout>
+  </session-config>
   <listener>
     <display-name>ServletContextListenerDemo</display-name>
     <listener-class>com.ddbin.javaweb.listener.ServletContextListenerDemo</listener-class>
