@@ -57,7 +57,6 @@ public class ServletContextListenerDemo implements ServletContextListener, Servl
 		System.out.println("app--- attributeRemoved!");
 		System.out.println("app: "+arg0.getName()+ " removed!");
 		
-
 	}
 
 	/**

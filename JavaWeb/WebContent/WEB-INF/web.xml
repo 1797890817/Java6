@@ -14,13 +14,10 @@
     <param-name>name</param-name>
     <param-value>lisi</param-value>
   </context-param>
-  
   <listener>
-  	<display-name>ServletContextListenerDemo</display-name>
-  	<listener-class>com.ddbin.javaweb.listener.ServletContextListenerDemo</listener-class>
+    <display-name>ServletContextListenerDemo</display-name>
+    <listener-class>com.ddbin.javaweb.listener.ServletContextListenerDemo</listener-class>
   </listener>
-  
-  
   <servlet>
     <servlet-name>ServletDemo</servlet-name>
     <servlet-class>com.ddbin.javaweb.servlet.ServletDemo</servlet-class>

@@ -19,5 +19,9 @@ public class BookBean {
 	
 	//创建需要的getter和Setter方法
 	
+	@Override
+	public String toString() {
+		return "BookBean [bookName=" + bookName + ", bookNum=" + bookNum + "]";
+	}
 
 }
