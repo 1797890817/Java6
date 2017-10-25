@@ -13,12 +13,13 @@
 			type="submit" value="登录">
 	</form>
 	<%
-		String userid  = request.getParameter("userid");
-	   if(!(userid ==null || "".equals(userid))){
-		   session.setAttribute("userid", userid);
-		   response.sendRedirect("./UserList.jsp");
-	   }
-	
+		String userid = request.getParameter("userid");
+		if (!(userid == null || "".equals(userid))) {
+			userid = new String(userid.getBytes("ISO-8859-1"), "UTF-8");
+			System.out.println("userid =" + userid);
+			session.setAttribute("userid", userid);
+			response.sendRedirect("./UserList.jsp");
+		}
 	%>
 
 </body>

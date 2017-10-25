@@ -70,12 +70,12 @@ public class OnlineUserList implements HttpSessionAttributeListener, HttpSession
 		String param = (String) paramHttpSessionBindingEvent.getName();
 		if ("userid".equals(param)) {
 			String name = (String) paramHttpSessionBindingEvent.getValue();
-			try {
-				name = new String(name.getBytes("ISO-8859-1"), "UTF-8");
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				name = new String(name.getBytes("ISO-8859-1"), "UTF-8");
+//			} catch (UnsupportedEncodingException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			all.add(name);
 			this.app.setAttribute("online", all);
 		}else {
@@ -97,10 +97,21 @@ public class OnlineUserList implements HttpSessionAttributeListener, HttpSession
 	}
 
 	/**
+	 *支持用户重新提交，重新提交相当于修改自己的名称！
 	 * @see HttpSessionAttributeListener#attributeReplaced(HttpSessionBindingEvent)
 	 */
-	public void attributeReplaced(HttpSessionBindingEvent paramHttpSessionBindingEvent) {
-		// TODO Auto-generated method stub
+	public void attributeReplaced(HttpSessionBindingEvent e) {
+		Set all = (Set) this.app.getAttribute("online");
+		String param = (String) e.getName();
+		if ("userid".equals(param)) {
+			String name = (String) e.getValue();
+			all.remove(name);
+			String newName = (String) e.getSession().getAttribute(e.getName());
+			all.add(newName);		
+			this.app.setAttribute("online", all);
+		}else {
+			System.out.println("......增加的属性并不是userid！......");
+		}
 	}
 
 	

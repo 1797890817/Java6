@@ -78,7 +78,7 @@ public class HttpSessionListenerDemo implements HttpSessionListener, HttpSession
 	 * @see HttpSessionAttributeListener#attributeRemoved(HttpSessionBindingEvent)
 	 */
 	public void attributeRemoved(HttpSessionBindingEvent arg0) {
-		System.out.println("session---attributeRemoved, " + arg0.getName() + " removed!");
+		System.out.println("session---attributeRemoved, " + arg0.getName() +" = "+arg0.getValue()+ " removed!");
 	}
 
 	/**
@@ -109,7 +109,9 @@ public class HttpSessionListenerDemo implements HttpSessionListener, HttpSession
 	 * @see HttpSessionListener#sessionDestroyed(HttpSessionEvent)
 	 */
 	public void sessionDestroyed(HttpSessionEvent arg0) {
-		System.out.println("HttpSessionListenerDemo--sessionDestroyed ,id=" + arg0.getSession().getId());
+		String id = arg0.getSession().getId();
+		System.out.println("HttpSessionListenerDemo--sessionDestroyed ,id=" + id);
+		System.out.println("Session "+id+":持续时间"+((System.currentTimeMillis()-arg0.getSession().getLastAccessedTime())/1000)+"s.");
 	}
 
 }
