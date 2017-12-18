@@ -33,7 +33,7 @@
 			<url>http://localhost:8888/repository/maven-snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
-	我是在release1.0分支上增加的内容
+	<!-- 我是在release1.0分支上增加的内容 -->
 
 	<build>
 		<finalName>WebDemo</finalName>
